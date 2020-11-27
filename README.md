@@ -38,9 +38,9 @@ Osana Salud tiene dos fuentes de datos de usuarios que debe centralizar en un ú
 
 * Un par de archivos CSV donde uno contiene la información de la cuenta de usuario, y el otro los datos del perfil. Ambos están relacionados mediante el ID del usuario (ver los archivos `data/users.csv` y `data/profiles.csv` en la raíz del proyecto).
 
-* El API ReST pública de (GitHub)[https://docs.github.com/en/free-pro-team@latest/rest]
+* El API ReST pública de [GitHub](https://docs.github.com/en/free-pro-team@latest/rest)
 
-El proyecto está planteado en PHP7 haciendo uso de su ecosistema mediante el gestor de paquetes (Composer)[https://getcomposer.org/] y se encuentra en un estado avanzado de desarrollo.
+El proyecto está planteado en PHP7 haciendo uso de su ecosistema mediante el gestor de paquetes [Composer](https://getcomposer.org/) y se encuentra en un estado avanzado de desarrollo.
 
 El modelo de datos con el que vamos a trabajar, se corresponde con el siguiente en formato JSON:
 
