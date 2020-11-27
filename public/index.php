@@ -34,7 +34,7 @@ $app->add(new WhoopsMiddleware(['enable' => env('API_ENV') === 'local']));
 // routes
 $app->get('/', VersionController::class);
 $app->get('/users', FindUsersController::class);
-$app->post('/users/{type}/{login}', ShowUserController::class);
+$app->get('/users/{type}/{login}', ShowUserController::class);
 $app->post('/users', StoreUserController::class);
 
 $app->run();
