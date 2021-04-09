@@ -28,7 +28,7 @@ Haremos especial hincapié en lo siguiente:
 
 * Al finalizar
 
-    - Crear un `pull-request` a la rama `master` de este repositorio, desde el `branch` con su nombre de usuario.
+    - Crear un `pull-request` a la rama `develop` de este repositorio, desde el `branch` con su nombre de usuario.
 
 ## Ejercicio práctico
 
