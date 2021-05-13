@@ -9,6 +9,8 @@ use Osana\Challenge\Services\Local\LocalUsersRepository;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
+use Tightenco\Collect\Support\Collection;
+
 class FindUsersController
 {
     /** @var LocalUsersRepository */
@@ -33,7 +35,12 @@ class FindUsersController
         // FIXME: Se debe tener cuidado en la implementación
         // para que siga las notas del documento de requisitos
         $localUsers = $this->localUsersRepository->findByLogin($login, $limit);
-        $githubUsers = $this->gitHubUsersRepository->findByLogin($login, $limit);
+        // $githubUsers = $this->gitHubUsersRepository->findByLogin($login, $limit);
+        $githubUsers = new Collection([]);
+        // $githubUsers = $this->localUsersRepository->findByLogin($login, $limit);
+
+        // dd($localUsers);
+
 
         $users = $localUsers->merge($githubUsers)->map(function (User $user) {
             return [
@@ -45,10 +52,11 @@ class FindUsersController
                     'company' => $user->getProfile()->getCompany()->getValue(),
                     'location' => $user->getProfile()->getLocation()->getValue(),
                 ]
-            ];
+            ];            
         });
 
         $response->getBody()->write($users->toJson());
+        // $response->getBody()->write([]);
 
         return $response->withHeader('Content-Type', 'application/json')
             ->withStatus(200, 'OK');

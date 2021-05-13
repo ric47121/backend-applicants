@@ -1,5 +1,7 @@
 <?php
 
+
+
 use DI\Container;
 use Dotenv\Dotenv;
 use Osana\Challenge\Http\Controllers\FindUsersController;
@@ -36,5 +38,10 @@ $app->get('/', VersionController::class);
 $app->get('/users', FindUsersController::class);
 $app->get('/users/{type}/{login}', ShowUserController::class);
 $app->post('/users', StoreUserController::class);
+
+
+// $csv = array_map('str_getcsv', file('../data/users.csv'));
+
+// dd($csv);
 
 $app->run();
